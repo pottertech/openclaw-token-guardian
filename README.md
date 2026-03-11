@@ -1,4 +1,4 @@
-# OpenClaw Memory Utilities
+# OpenClaw Token Guardian
 
 Scripts for managing OpenClaw workspace memory and preventing context bloat.
 
