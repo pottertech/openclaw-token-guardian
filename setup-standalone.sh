@@ -25,7 +25,7 @@ cat > "$CRON_FILE" << 'EOF'
 # Token Guardian - Periodic token check
 # Runs every 5 minutes to monitor context usage
 
-*/5 * * * * cd ~/.openclaw/workspace/repos/openclaw-memory-utilities && python3 token-guardian.py check-main >> ~/.openclaw/workspace/logs/token-guardian.log 2>&1
+*/5 * * * * cd ~/.openclaw/workspace/repos/openclaw-token-guardian && python3 token-guardian.py check-main >> ~/.openclaw/workspace/logs/token-guardian.log 2>&1
 EOF
 
 echo ""

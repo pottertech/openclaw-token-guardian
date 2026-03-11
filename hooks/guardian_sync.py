@@ -6,8 +6,8 @@ Called automatically by OpenClaw to keep token usage in sync.
 Installation:
   Add to OpenClaw config:
     hooks:
-      pre_message: ~/.openclaw/workspace/repos/openclaw-memory-utilities/hooks/guardian_sync.py
-      post_message: ~/.openclaw/workspace/repos/openclaw-memory-utilities/hooks/guardian_sync.py
+      pre_message: ~/.openclaw/workspace/repos/openclaw-token-guardian/hooks/guardian_sync.py
+      post_message: ~/.openclaw/workspace/repos/openclaw-token-guardian/hooks/guardian_sync.py
 """
 
 import json

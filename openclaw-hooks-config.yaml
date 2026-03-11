@@ -7,15 +7,15 @@
 gateway:
   hooks:
     # Token Guardian - sync on every message
-    preMessage: ~/.openclaw/workspace/repos/openclaw-memory-utilities/hooks/guardian_sync.py
-    postMessage: ~/.openclaw/workspace/repos/openclaw-memory-utilities/hooks/guardian_sync.py
+    preMessage: ~/.openclaw/workspace/repos/openclaw-token-guardian/hooks/guardian_sync.py
+    postMessage: ~/.openclaw/workspace/repos/openclaw-token-guardian/hooks/guardian_sync.py
     
     # Token Guardian - handle model switches
-    modelSwitch: ~/.openclaw/workspace/repos/openclaw-memory-utilities/hooks/on-model-switch.sh
+    modelSwitch: ~/.openclaw/workspace/repos/openclaw-token-guardian/hooks/on-model-switch.sh
     
     # Token Guardian - session lifecycle
-    sessionStart: ~/.openclaw/workspace/repos/openclaw-memory-utilities/hooks/guardian_sync.py
-    sessionEnd: ~/.openclaw/workspace/repos/openclaw-memory-utilities/hooks/guardian_cleanup.sh
+    sessionStart: ~/.openclaw/workspace/repos/openclaw-token-guardian/hooks/guardian_sync.py
+    sessionEnd: ~/.openclaw/workspace/repos/openclaw-token-guardian/hooks/guardian_cleanup.sh
   
   # Token thresholds (percent of model limit)
   tokenTracking:

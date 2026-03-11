@@ -27,7 +27,7 @@ python3 token-guardian.py stats
 ### Option 1: Standalone (Recommended)
 
 ```bash
-cd ~/.openclaw/workspace/repos/openclaw-memory-utilities
+cd ~/.openclaw/workspace/repos/openclaw-token-guardian
 ./setup-standalone.sh
 ```
 

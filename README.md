@@ -14,8 +14,8 @@ Scripts for managing OpenClaw workspace memory and preventing context bloat.
 
 ```bash
 # Clone or download
-git clone https://github.com/pottertech/openclaw-memory-utilities.git
-cd openclaw-memory-utilities
+git clone https://github.com/pottertech/openclaw-token-guardian.git
+cd openclaw-token-guardian
 
 # Run setup to install cron jobs
 ./setup-cron.sh
