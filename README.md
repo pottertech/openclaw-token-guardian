@@ -64,3 +64,62 @@ cp *.sh ~/.openclaw/workspace/memory/
 ## License
 
 MIT — Feel free to use and modify!
+
+---
+
+## 🆕 Token Guardian (Context Overflow Prevention)
+
+**NEW:** Token-aware context management prevents "prompt too large" errors.
+
+### Features
+- Tracks actual token usage per session
+- Auto-detects model switches and recalculates thresholds
+- Handles sub-agents with fresh context
+- Warns at 75%, acts at 85%, emergency at 95%
+- Integrates with OpenClaw hooks
+
+### Installation
+
+```bash
+# Install Token Guardian hooks
+./install-hooks.sh
+```
+
+Or manually:
+```bash
+openclaw config patch < openclaw-hooks-config.yaml
+```
+
+### Usage
+
+```bash
+# Check current session
+python3 token-guardian.py check <session> <model> <tokens>
+
+# View all sessions
+python3 token-guardian.py status
+
+# Sync with OpenClaw runtime
+python3 runtime-sync.py
+```
+
+### Files
+| File | Purpose |
+|------|---------|
+| `token-guardian.py` | Core tracking with auto-validation |
+| `runtime-sync.py` | Poll OpenClaw for current state |
+| `hooks/guardian_sync.py` | Pre/post message hook |
+| `hooks/on-model-switch.sh` | Model change handler |
+| `openclaw-hooks-config.yaml` | Gateway config patch |
+| `install-hooks.sh` | One-click installer |
+
+### Model Context Limits
+| Model | Tokens |
+|-------|--------|
+| ollama/kimi-k2.5 | 8,192 |
+| ollama/qwen3.5:397b-cloud | 32,768 |
+| claude-3-5-sonnet | 200,000 |
+
+---
+
+*Token Guardian — Preventing context overflow since 2026*

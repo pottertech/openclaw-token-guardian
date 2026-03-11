@@ -1,0 +1,33 @@
+# PRIORITY Ordered Hooks Configuration
+# This ensures guardian runs BEFORE other hooks
+#
+# Hook order matters: First to return non-zero exits the chain
+
+gateway:
+  hooks:
+    # PRIORITY 1: Token Guardian (MUST BE FIRST)
+    preMessage: |
+      ~/.openclaw/workspace/repos/openclaw-memory-utilities/hooks/guardian_priority_check.py
+      ~/.openclaw/workspace/repos/openclaw-memory-utilities/hooks/guardian_sync.py
+    
+    # Model switch (immediate update)
+    modelSwitch: |
+      ~/.openclaw/workspace/repos/openclaw-memory-utilities/hooks/on-model-switch.sh
+    
+    # Session lifecycle
+    sessionStart: |
+      ~/.openclaw/workspace/repos/openclaw-memory-utilities/hooks/guardian_sync.py
+    sessionEnd: |
+      ~/.openclaw/workspace/repos/openclaw-memory-utilities/hooks/guardian_cleanup.sh
+    
+    # Post-message (for stats/logging)
+    postMessage: |
+      ~/.openclaw/workspace/repos/openclaw-memory-utilities/hooks/guardian_sync.py
+
+# Alternative: Use array format for explicit ordering
+# hooks:
+#   preMessage:
+#     - priority: 1
+#       command: guardian_priority_check.py  # Block if overflow
+#     - priority: 2  
+#       command: guardian_sync.py            # Update tracking

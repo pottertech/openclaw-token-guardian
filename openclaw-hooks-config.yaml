@@ -1,0 +1,38 @@
+# OpenClaw Gateway Configuration Patch
+# Add this to your ~/.openclaw/config.yaml under the gateway section
+#
+# Installation:
+#   openclaw config patch < openclaw-hooks-config.yaml
+
+gateway:
+  hooks:
+    # Token Guardian - sync on every message
+    preMessage: ~/.openclaw/workspace/repos/openclaw-memory-utilities/hooks/guardian_sync.py
+    postMessage: ~/.openclaw/workspace/repos/openclaw-memory-utilities/hooks/guardian_sync.py
+    
+    # Token Guardian - handle model switches
+    modelSwitch: ~/.openclaw/workspace/repos/openclaw-memory-utilities/hooks/on-model-switch.sh
+    
+    # Token Guardian - session lifecycle
+    sessionStart: ~/.openclaw/workspace/repos/openclaw-memory-utilities/hooks/guardian_sync.py
+    sessionEnd: ~/.openclaw/workspace/repos/openclaw-memory-utilities/hooks/guardian_cleanup.sh
+  
+  # Token thresholds (percent of model limit)
+  tokenTracking:
+    enabled: true
+    warnAtPercent: 75
+    actAtPercent: 85
+    emergencyAtPercent: 95
+    autoUpgradeOnOverflow: true
+  
+  # Model limits for known models
+  models:
+    contextLimits:
+      "ollama/kimi-k2.5": 8192
+      "ollama/kimi-k2.5:cloud": 8192
+      "ollama/qwen3.5:397b-cloud": 32768
+      "ollama/qwen3.5": 32768
+      "claude-3-5-sonnet": 200000
+      "claude-3-5-sonnet-20241022": 200000
+    overflowFallback: "ollama/qwen3.5:397b-cloud"
+    emergencyFallback: "claude-3-5-sonnet"

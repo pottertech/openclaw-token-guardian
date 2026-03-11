@@ -1,0 +1,22 @@
+# Token Guardian Default Configuration
+# Applied on install
+
+token_guardian:
+  # Default compact option (1=smart, 2=pg-memory, 3=files, 4=reset, 5=status)
+  default_compact_option: 1
+  
+  # Auto-compact threshold (trigger without asking)
+  auto_compact_threshold: 95
+  
+  # Show options at thresholds
+  show_options_at: [75, 85, 95]
+  
+  # Storage preferences
+  storage:
+    prefer_pg_memory: true
+    fallback_to_files: true
+    
+  # Smart compact behavior
+  smart_compact:
+    try_order: ["pg-memory", "files"]
+    on_failure: "warn_and_continue"
