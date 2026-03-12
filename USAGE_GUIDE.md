@@ -232,7 +232,7 @@ $ tg-check
     "action": "auto_compact",
     "succeeded": true,
     "storage": "files",
-    "location": "/Users/skipppotter/.openclaw/workspace/memory/2026-03-11.md"
+    "location": "~/.openclaw/workspace/memory/2026-03-11.md"
   }
 }
 # → Auto-compacted! Context saved, session continues.

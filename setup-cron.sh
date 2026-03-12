@@ -5,7 +5,7 @@
 echo "🦀 Installing Context Protection Cron Jobs..."
 echo "=================================="
 
-WORKSPACE="/Users/skipppotter/.openclaw/workspace"
+WORKSPACE="$HOME/.openclaw/workspace"
 
 # Ensure scripts exist and are executable
 if [ ! -f "$WORKSPACE/memory/context-guardian.sh" ]; then
