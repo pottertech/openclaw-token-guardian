@@ -12,7 +12,7 @@ from pathlib import Path
 # Model context limits (in tokens)
 MODEL_LIMITS = {
     "ollama/kimi-k2.5:cloud": 262144,
-    "ollama/minimax-m2.5:cloud": 131072,
+    "ollama/minimax-m2.5:cloud": 198000,
     "ollama/qwen3.5:397b-cloud": 32768,
     "ollama/qwen3.5": 32768,
     "claude-3-5-sonnet": 200000,
