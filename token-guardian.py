@@ -53,6 +53,7 @@ class TokenGuardian:
     
     def update_model(self, new_model):
         """Handle model switch - preserves tokens, recalculates percentage."""
+        old_model = self.model  # Store old model BEFORE changing
         old_limit = self.limit
         self.model = new_model
         self.limit = MODEL_LIMITS.get(new_model, DEFAULT_LIMIT)
@@ -61,7 +62,7 @@ class TokenGuardian:
         return {
             "event": "model_switched",
             "timestamp": datetime.now().isoformat(),
-            "old_model": self.model,
+            "old_model": old_model,  # Now correctly reports the old model
             "new_model": new_model,
             "old_limit": old_limit,
             "new_limit": self.limit,

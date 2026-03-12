@@ -116,9 +116,13 @@ python3 runtime-sync.py
 ### Model Context Limits
 | Model | Tokens |
 |-------|--------|
-| ollama/kimi-k2.5 | 8,192 |
+| ollama/kimi-k2.5:cloud | 262,144 |
+| ollama/minimax-m2.5:cloud | 198,000 |
+| ollama/deepseek-v3.2:cloud | 131,072 |
+| ollama/mistral-large-3:675b-cloud | 131,072 |
 | ollama/qwen3.5:397b-cloud | 32,768 |
 | claude-3-5-sonnet | 200,000 |
+| gpt-4-turbo | 128,000 |
 
 ---
 
